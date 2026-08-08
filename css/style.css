@@ -142,6 +142,7 @@ img {
   font-weight: 800;
   font-family: var(--font-serif);
   line-height: 1;
+  width: 20px;
 }
 
 .vertical-badge .badge-text {
@@ -201,6 +202,7 @@ img {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #ffffff;
+  width: 80px;
 }
 
 .logo-text span {
