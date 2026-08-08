@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initServiceModal();
   initScrollAnimations();
+  initFaqAccordion();
 });
 
 /* --------------------------------------------------------------------------
@@ -172,4 +173,31 @@ function initScrollAnimations() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Accordion
+   -------------------------------------------------------------------------- */
+function initFaqAccordion() {
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      const answer = btn.nextElementSibling;
+
+      // Close all other open items
+      questions.forEach(otherBtn => {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute('aria-expanded', 'false');
+          const otherAnswer = otherBtn.nextElementSibling;
+          if (otherAnswer) otherAnswer.classList.remove('open');
+        }
+      });
+
+      // Toggle current
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      if (answer) answer.classList.toggle('open', !isExpanded);
+    });
+  });
 }
