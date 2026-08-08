@@ -1244,15 +1244,39 @@ img {
 }
 
 /* ==========================================================================
-   BLOG PAGE STYLES
+   SUBPAGE HERO SECTIONS WITH BACKGROUND IMAGES
    ========================================================================== */
-.blog-hero {
-  padding: 160px 0 60px 0;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  border-bottom: 1px solid var(--border-dark);
+.about-hero,
+.gallery-hero,
+.blog-hero,
+.contact-hero {
+  padding: 160px 0 80px 0;
+  position: relative;
+  background-color: #121212;
+  color: #ffffff;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.about-hero {
+  background-image: linear-gradient(to right, rgba(18, 18, 18, 0.92) 0%, rgba(18, 18, 18, 0.72) 100%), url('../images/about_interior.jpg');
+}
+
+.gallery-hero {
+  background-image: linear-gradient(to right, rgba(18, 18, 18, 0.92) 0%, rgba(18, 18, 18, 0.72) 100%), url('../images/rwen_p1.jpg');
+}
+
+.blog-hero {
+  background-image: linear-gradient(to right, rgba(18, 18, 18, 0.92) 0%, rgba(18, 18, 18, 0.72) 100%), url('../images/service_banner.jpg');
+}
+
+.contact-hero {
+  background-image: linear-gradient(to right, rgba(18, 18, 18, 0.92) 0%, rgba(18, 18, 18, 0.72) 100%), url('../images/contact_1.jpg');
+}
+
+.about-hero-title,
 .blog-hero-title {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 6.5vw, 6.5rem);
@@ -1261,11 +1285,12 @@ img {
   letter-spacing: -1px;
   line-height: 1;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .blog-hero-desc {
   font-size: 1.1rem;
-  color: var(--text-light-muted);
+  color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
   line-height: 1.6;
 }
