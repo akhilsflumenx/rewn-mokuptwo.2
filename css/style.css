@@ -1016,12 +1016,14 @@ img {
 }
 
 /* ==========================================================================
-   SECTION 6: FOOTER
+   SECTION 6: FOOTER (RESTORED OLD DESIGN WITH UPDATED ITEM COLORS)
    ========================================================================== */
 .site-footer {
-  background-color: var(--bg-footer);
-  color: #e5e7e2;
-  padding: 100px 0 40px 0;
+  background-color: #3b4237; /* Dark Olive Charcoal Palette */
+  color: #e2e6df;
+  padding: 90px 0 40px 0;
+  position: relative;
+  font-family: var(--font-sans);
 }
 
 .footer-top {
@@ -1030,88 +1032,92 @@ img {
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .footer-brand {
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  max-width: 400px;
 }
 
 .footer-logo-img {
-  height: 60px;
+  height: 52px;
   width: auto;
   object-fit: contain;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer-tagline {
   font-size: 0.85rem;
-  letter-spacing: 2.5px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--accent-gold);
+  font-weight: 500;
   margin-top: 4px;
 }
 
-.footer-nav-col h4 {
-  font-size: 0.8rem;
+.footer-nav-col h4,
+.footer-contact-info h4 {
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  opacity: 0.6;
+  letter-spacing: 2.5px;
+  margin-bottom: 22px;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .footer-nav-col ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .footer-nav-col ul a {
   font-size: 0.95rem;
-  opacity: 0.85;
+  color: #d1d6ce;
   transition: var(--transition-fast);
 }
 
 .footer-nav-col ul a:hover {
-  opacity: 1;
   color: #ffffff;
-  padding-left: 4px;
+  padding-left: 6px;
 }
 
 .footer-contact-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   font-size: 0.95rem;
-  opacity: 0.85;
-  max-width: 280px;
+  color: #d1d6ce;
+  max-width: 320px;
+  line-height: 1.6;
 }
 
 .footer-socials {
   display: flex;
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .social-icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--accent-gold);
   transition: var(--transition-fast);
 }
 
 .social-icon-btn:hover {
-  background: #ffffff;
-  color: var(--bg-footer);
+  background: var(--accent-gold);
+  color: #3b4237;
+  border-color: var(--accent-gold);
   transform: translateY(-3px);
 }
 
@@ -1121,8 +1127,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8rem;
-  opacity: 0.6;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -1130,6 +1136,15 @@ img {
 .footer-links-inline {
   display: flex;
   gap: 24px;
+}
+
+.footer-links-inline a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: var(--transition-fast);
+}
+
+.footer-links-inline a:hover {
+  color: var(--accent-gold);
 }
 
 /* Modal Popup for Services / Inquiry */
@@ -1564,6 +1579,12 @@ img {
   margin-top: 50px;
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
 @media (max-width: 900px) {
   .team-grid {
     grid-template-columns: 1fr;
@@ -1572,21 +1593,31 @@ img {
 
 .team-card {
   background: #ffffff;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .team-img-box {
   width: 100%;
-  height: 320px;
+  height: 440px;
   overflow: hidden;
+  background-color: #f7f6f2;
 }
 
 .team-img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .team-card:hover .team-img-box img {
@@ -1594,22 +1625,27 @@ img {
 }
 
 .team-info {
-  padding: 24px;
+  padding: 28px;
+  background: #ffffff;
+  border-top: 2px solid var(--accent-gold);
 }
 
 .team-name {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 4px;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .team-role {
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent-olive);
+  letter-spacing: 2px;
+  color: var(--accent-gold);
   font-weight: 600;
+  display: block;
 }
 
 /* ==========================================================================
@@ -1748,5 +1784,141 @@ img {
   color: var(--text-muted);
   line-height: 1.6;
 }
+
+/* ==========================================================================
+   EDITORIAL FOUNDER / LEADERSHIP SECTION (MEET LIORA / GOWRI LAYOUT)
+   ========================================================================== */
+.editorial-founder-section {
+  padding: 120px 0;
+  background-color: #f2efe9;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.editorial-founder-section.alt-bg {
+  background-color: #e9e5dc;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.founder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.founder-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #111111;
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.founder-main-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+.founder-tag {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+@media (max-width: 900px) {
+  .founder-tag {
+    position: static;
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+  }
+}
+
+.founder-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .founder-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.founder-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 60px;
+}
+
+.founder-text-block p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  color: #4a4a4a;
+  font-weight: 500;
+  max-width: 320px;
+}
+
+.founder-portrait-box {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.founder-portrait-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.founder-portrait-box:hover img {
+  transform: scale(1.04);
+}
+
+.founder-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.founder-quote-block {
+  margin-top: auto;
+}
+
+.founder-quote-block p {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  color: #111111;
+  font-weight: 600;
+  max-width: 320px;
+}
+
 
 

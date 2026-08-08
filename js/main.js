@@ -162,7 +162,14 @@ function initScrollAnimations() {
   revealElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
     observer.observe(el);
   });
+
+  const scrollTopBtn = document.querySelector('.scroll-to-top');
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
