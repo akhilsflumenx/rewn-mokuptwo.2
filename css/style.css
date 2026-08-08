@@ -2162,36 +2162,52 @@ img {
     min-height: 560px;
   }
   .hero-content {
-    padding-top: 110px;
-    padding-bottom: 40px;
+    padding-top: 75px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .hero-typography {
-    margin-top: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: left;
+    padding-left: 4px;
   }
   .hero-title-top {
-    font-size: clamp(2.8rem, 14vw, 5.5rem);
-    letter-spacing: -1px;
+    font-size: clamp(3.5rem, 17vw, 6.5rem);
+    letter-spacing: -1.5px;
+    line-height: 0.98;
+    text-align: left;
   }
   .hero-title-bottom {
-    font-size: clamp(2.8rem, 14vw, 5.5rem);
+    font-size: clamp(3.5rem, 17vw, 6.5rem);
     text-align: left;
     margin-top: 4px;
+    line-height: 0.98;
+    letter-spacing: -1.5px;
   }
   .hero-bottom-bar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 16px;
   }
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     max-width: 100%;
+    text-align: left;
+  }
+  .hero-scroll-indicator {
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title-top,
   .hero-title-bottom {
-    font-size: clamp(2.4rem, 15vw, 4rem);
+    font-size: clamp(3.2rem, 16vw, 5.5rem);
   }
 }
 
